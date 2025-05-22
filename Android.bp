@@ -6,6 +6,7 @@ soong_namespace {
 	imports: [
 		"vendor/xiaomi/sm8150-common",
 		"hardware/qcom-caf/common/libqti-perfd-client",
+		"hardware/qcom-caf/sm8150",
 		"hardware/xiaomi",
 		"vendor/qcom/opensource/display",
 	],
@@ -1395,11 +1396,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/hw/com.qti.chi.override.so"],
-			shared_libs: ["libc++", "libcutils", "liblog", "libcamera_metadata", "libhardware", "libhidlbase", "libhidltransport", "libqdMetaData", "libsync", "libutils", "vendor.qti.hardware.vpp@1.1", "vendor.qti.hardware.vpp@1.2", "libmialgo_fs", "libmialgo_utils", "libion", "libmialgo_rfs", "libc", "libm", "libdl", ],
+			shared_libs: ["libc++", "libcutils", "liblog", "libcamera_metadata", "libhardware", "libhidlbase", "libhidltransport", "libqdMetaData", "libsync", "libutils", "vendor.qti.hardware.vpp@1.1", "vendor.qti.hardware.vpp@1.2", "libgrallocutils", "libmialgo_fs", "libmialgo_utils", "libion", "libmialgo_rfs", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	relative_install_path: "hw",
 	prefer: true,
 	soc_specific: true,
